@@ -31,4 +31,17 @@ class Client {
     );
   }
 
+  public function query($query) {
+    $url = 'queryAll?q=';
+    $url .= urlencode($query);
+
+    return new SalesforceRequest(
+      'GET',
+      $url,
+      $this->accessToken,
+      $this->baseUrl,
+      $this->apiPrefix
+    );
+  }
+
 }
