@@ -18,6 +18,7 @@ class SalesforceRequest {
   protected $baseUrl;
   protected $apiPrefix;
   protected $timeout;
+  protected $headers;
   protected $requestBody;
   protected $returnsStream;
   protected $sink;
