@@ -132,7 +132,7 @@ class SalesforceRequest {
    *   Request URL.
    */
   private function getRequestUrl() {
-    $url = $this->apiPrefix . '/' . $this->endpoint;
+    $url = implode('/', array_filter([$this->apiPrefix, $this->endpoint]));
 
     if (!empty($this->urlQuery)) {
       $url .= '?' . $this->urlQuery;
