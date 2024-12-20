@@ -44,4 +44,14 @@ class Client {
     );
   }
 
+  public function url($url) {
+    return new SalesforceRequest(
+      'GET',
+      $url,
+      $this->accessToken,
+      $this->baseUrl,
+      NULL
+    );
+  }
+
 }
